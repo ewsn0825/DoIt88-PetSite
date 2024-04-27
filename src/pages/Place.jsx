@@ -1,9 +1,9 @@
-function Ranking() {
+function Place() {
   return (
     <div>
-      <h2 className="text-slate-400 font-semibold">콘텐츠</h2>
+      <h2 className="text-slate-400 font-semibold">나들이</h2>
     </div>
   );
 }
 
-export default Ranking;
+export default Place;

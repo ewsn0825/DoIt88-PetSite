@@ -1,2 +1,2 @@
-export * from './percent'
 export * from './getPbImageURL'
+export * from './debounce'

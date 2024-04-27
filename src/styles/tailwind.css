@@ -1,3 +1,38 @@
 @import 'tailwindcss/base';
+@import './custom-reset.css';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer components {
+  .more::before {
+    content: '';
+    background: url('/src/assets/icon/more.svg') no-repeat;
+    @apply mr-1 inline-block object-cover w-[10px] h-[10px] mb-[1px];
+  }
+  .pageActive {
+    @apply border-2 text-primary px-[14px] py-2 rounded-full border-primary;
+  }
+  .arrow-up::before {
+    content: ' ';
+    border: 20px solid transparent;
+    @apply h-0 w-0 absolute border-t-0 border-b-primaryContainer -top-3 left-[2px];
+  }
+}
+
+/* @import './pretendard.css'; */
+/* @import './font.css'; */
+
+.CommunityListProcedure input[type='radio']:checked + label span {
+  background-color: gray;
+  border-color: #5956e9;
+  border-width: 5px;
+}
+
+.CommunityListText {
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

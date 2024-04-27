@@ -1,17 +1,22 @@
-
 // import { Outlet } from "react-router-dom";
 
-import Main from "./MainBox";
-import Footer from "./Footer"
-
+// import Main from "./MainBox";
+import { Outlet } from 'react-router-dom';
+import Footer from './Footer';
+import Header from './Header';
 
 function RootLayout() {
   return (
-    <>
-      <Main/>
+    <div className='mx-auto'>
+      {/* <Main/> */}
+      <Header />
 
-      <Footer/>
-    </>
+      <main className="font-pre">
+        <Outlet />
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 

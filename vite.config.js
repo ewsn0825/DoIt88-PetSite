@@ -11,12 +11,26 @@ export default defineConfig({
   css: {
     devSourcemap: true,
     modules: {
-      generateScopedName: isDev ? '[name]_[local]__[hash:base64:5]' : '[hash:base64:4]'
-    }
+      generateScopedName: isDev
+        ? '[name]_[local]__[hash:base64:5]'
+        : '[hash:base64:4]',
+    },
   },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          reactRouter: ['react-router-dom'],
+          animations: ['framer-motion', 'gsap'],
+          extra: ['zustand', 'immer', '@tanstack/react-query'],
+        },
+      },
     },
   },
 });
